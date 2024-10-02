@@ -7,7 +7,6 @@ import (
 	"github.com/Rajar01/golang-url-shortener/src/models"
 	"github.com/Rajar01/golang-url-shortener/src/utils"
 	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
 	"gorm.io/gorm"
 	"log"
 	"net/http"
@@ -29,14 +28,6 @@ func initDatabase() {
 	log.Println("Connected to the database!")
 }
 
-// Function to load .env file
-func initEnv() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-}
-
 // Function for database migration
 func databaseMigration() {
 	err := database.DB.AutoMigrate(&models.ShortLink{})
@@ -49,7 +40,7 @@ func databaseMigration() {
 }
 
 func main() {
-	initEnv()
+	utils.InitEnv()
 
 	baseUrl := os.Getenv("BASE_URL")
 	port := os.Getenv("PORT")

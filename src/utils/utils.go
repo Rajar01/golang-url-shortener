@@ -4,7 +4,9 @@ import (
 	"crypto/rand"
 	"encoding/base64"
 	"fmt"
+	"github.com/joho/godotenv"
 	"io"
+	"log"
 )
 
 func GenerateRandomString(length int) (string, error) {
@@ -28,4 +30,11 @@ func GenerateShortenedURL(baseURL string, length int) (string, error) {
 
 	// Concatenate the base URL with the random string
 	return fmt.Sprintf("%s/%s", baseURL, randomString), nil
+}
+
+func InitEnv() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 }
