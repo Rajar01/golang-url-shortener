@@ -13,7 +13,7 @@ This project is a simple URL shortener built using Golang, Gin, and GORM. It pro
 
 Before you begin, ensure you have the following installed on your machine:
 
-- [Golang](https://golang.org/)
+- [Golang](https://golang.org/)`
 - [MySQL](https://www.mysql.com/) (or any GORM-compatible database)
 - [Git](https://git-scm.com/)
 - [Postman](https://www.postman.com/) or any API testing tool (for testing the API)
@@ -31,13 +31,15 @@ Before you begin, ensure you have the following installed on your machine:
     go mod tidy
     ```
 
-3. Run database migrations and start the server:
+3. Create a database with name "**golang_url_shortener**"
+
+4. Run database migrations and start the server:
    This will create the necessary tables in your database.
     ```bash
     go run main.go
     ```
    
-4. The server will be running at `http://127.0.0.1:8080`.
+5. The server will be running at `http://127.0.0.1:8080`.
 
 ## API Endpoints
 
